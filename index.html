@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>$5 Coin Flip</title>
+		<meta content="width=device-width,initial-scale=1.0" name="viewport">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="./css/Five_Dollar_Style.css">
+		<style></style>
+	</head>
+
+
+<body>
+	<div class="jumbotron">
+  <h1 class="display-4">Gambler's Hell... or Heaven?</h1>
+  <p class="lead">A test of judgment.</p>
+  <hr class="my-4">
+  <p>You'll be flipping a coin... but are the odds in your favor?</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#" role="button" id="rule1" onclick="rule1()">Rule 1</a><br><br>
+    <a class="btn btn-primary btn-lg" href="#" role="button" id="rule2" onclick="rule2()">Rule 2</a><br><br>
+    <a class="btn btn-primary btn-lg" href="#" role="button" id="rule3" onclick="rule3()">Rule 3</a><br><br>
+    <a class="btn btn-primary btn-lg" href="#" role="button" id="movingOn" onclick="goToPage2()"></a>
+  </p>
+</div>
+
+<script type="text/javascript">
+	function rule1() {
+		document.getElementById("rule1").innerHTML = "Rule 1: Each game costs $5. The game ends whenever you flip tails.";
+		
+	}
+	function rule2() {
+		document.getElementById("rule2").innerHTML = "Rule 2: If you flip heads, you get $1 back... and another flip.";
+		
+	}
+	function rule3() {
+		document.getElementById("rule3").innerHTML = "Rule 3: Each time you get heads, you get twice as much back as the previous time.";
+		setTimeout(shallWePage2, 2000);
+
+	}
+
+
+	function shallWePage2() {
+		document.getElementById("movingOn").innerHTML = "Let's play, shall we?";
+		
+		
+	}
+
+	function goToPage2() {
+		window.location.assign("demointro.html")
+	}
+
+
+
+
+	/*function rule5() {
+		document.getElementById("rule5").innerHTML = "Rule 1: Each game costs $5. The game ends whenever you flip tails.";
+		
+	}
+	function rule6() {
+		document.getElementById("rule6").innerHTML = "Rule 1: Each game costs $5. The game ends whenever you flip tails.";
+		
+	}
+	function rule7() {
+		document.getElementById("rule7").innerHTML = "Rule 1: Each game costs $5. The game ends whenever you flip tails.";
+	
+	}
+	function rule1() {
+		document.getElementById("rule1").innerHTML = "Rule 1: Each game costs $5. The game ends whenever you flip tails.";
+
+	}*/
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>$5 Coin Flip pg2</title>
+</head>
+<meta content="width=device-width,initial-scale=1.0" name="viewport">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="./css/Five_Dollar_Style.css">
+		<style></style>
+		<
+	</head>
+
+<body onload="startCounting()">
+	<div class="jumbotron">
+	  <h1 class="display-4">Gambler's Hell... or Heaven?</h1>
+	  <p class="lead">A test of judgment.</p>
+	  <hr class="my-4">
+	  <h1 class="display-4"></h1>
+	  <h1 class="display-4"></h1><br>
+	  <h1 class="display-4">Let's start with $50 and stop when we've either won another $50 or lost it all.</h1><br>
+	      <a class="btn btn-primary btn-lg" href="#" role="button" id="movingOn" onclick="goToPage3()"></a>
+  </div>
+
+<script>
+	
+
+	function shallWePage3 () {
+		document.getElementById("movingOn").innerHTML = "Ready?";	
+	}
+	function startCounting () {
+		setTimeout(shallWePage3, 2000);
+	}
+	
+
+	function goToPage3() {
+		window.location.assign("demo.html")
+	}
+</script>
+
+
+  </body>
+</html>	
