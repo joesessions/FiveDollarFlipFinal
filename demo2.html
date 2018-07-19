@@ -34,7 +34,7 @@
 	  <div id="yo"></div></div>
 	      <a class="btn btn-primary btn-lg" href="#" role="button" id="movingOn" onclick="play10000times()"></a>
 	  <div id="yo2"></div>
-	  	  <a class="btn btn-primary btn-lg" href="#" role="button" id="goToDemo2" onclick="goToDemo3()"></a>
+	  	  <a class="btn btn-primary btn-lg" href="#" role="button" id="goToDemo3" onclick="goToDemo3()"></a>
   </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.js"></script>
@@ -192,18 +192,8 @@
 	
 		var child8 = document.getElementById("removable");
 		child8.parentNode.removeChild(child8);	
-		var child9 = document.getElementById("outcome");
-		child9.parentNode.removeChild(child9);
-		var child10 = document.getElementById("conclusion");
-		child10.parentNode.removeChild(child10);		
-		var child11 = document.getElementById("balance");
-		child11.parentNode.removeChild(child11);
-		var child12 = document.getElementById("yo");
-		child12.parentNode.removeChild(child12);
-		var child13 = document.getElementById("div1");
-		child13.parentNode.removeChild(child13);		
-		var child14 = document.getElementById("account");
-		child14.parentNode.removeChild(child14);
+
+		document.getElementById("goToDemo3").innerHTML = "What if we start with $10,000?";
 	};
 
 		function playfast() {
@@ -228,15 +218,19 @@
 
 		function winner2() {
 			winTimes++;
-			document.getElementById("yo2").innerHTML = "<br>Nights you won $50 or more: "+winTimes+" <br/> Nights you lost $50: "+lossTimes+"<br/> Percent of nights with a winning outcome (Winning: we got to $50,000 or more and stopped): "+(100*winTimes/(winTimes+lossTimes))+"%";
+			document.getElementById("yo2").innerHTML = "<br>Nights you won $50 or more: "+winTimes+" <br/> Nights you lost $50: "+lossTimes+"<br/> Percent of nights with a winning outcome (Winning: we got to $50,000 or more and stopped): "+(100*winTimes/(winTimes+lossTimes))+"%<br><br>";
 			
 		};
 
 		function loser2 () {
 			lossTimes++;
 			console.log("lossTimes", lossTimes)
-			document.getElementById("yo2").innerHTML = "<br>Nights you won $50 or more: "+winTimes+" <br/> Nights you lost $50: "+lossTimes+" <br/> Percent of nights with a winning outcome (Winning: we got to $50,000 or more and stopped): "+(100*winTimes/(winTimes+lossTimes))+"%";
+			document.getElementById("yo2").innerHTML = "<br>Nights you won $50 or more: "+winTimes+" <br/> Nights you lost $50: "+lossTimes+" <br/> Percent of nights with a winning outcome (Winning: we got to $50,000 or more and stopped): "+(100*winTimes/(winTimes+lossTimes))+"%<br><br>";
 		};	
+		
+		function goToDemo3() {
+		window.location.assign("demo3.html")
+		}
 /*		function graphIt2() {	
 
 		graphdata = [0,0];
