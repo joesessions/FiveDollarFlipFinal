@@ -20,8 +20,8 @@
 	  <h1 class="display-4">Gambler's Hell... or Heaven?</h1>
 	  <p class="lead">A test of judgment.</p>
 	  <hr class="my-4">
-	  <div id="removable"><p>This will play until all our $1000 is all gone or until we have $50,000.</p>
-	  <p>You'll win about 40% of the time. But your winning nights are much bigger than your losing nights!</p>
+	  <div id="removable"><p>This will play until all our $10,000 is all gone or until we have $50,000.</p>
+	  <p>If you start with $10,000, you will lose <strong>less than ONE PERCENT</strong> of the time!</p>
 	  <p>Refresh the page to play as many times as you want.</p>
 	  <span id="account">Account Balance:  $ <input type="number" id="balance">
 	      <a class="btn btn-primary btn-lg" href="#" role="button" id="play" onclick="play()">Play</a><br><br><br>
@@ -34,7 +34,7 @@
 	  <div id="yo"></div></div>
 	      <a class="btn btn-primary btn-lg" href="#" role="button" id="movingOn" onclick="play10000times()"></a>
 	  <div id="yo2"></div>
-	  	  <a class="btn btn-primary btn-lg" href="#" role="button" id="goToDemo2" onclick="goToDemo3()"></a>
+
   </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.js"></script>
@@ -46,7 +46,7 @@
 	var winTimes=0, lossTimes=0
 
 	function initialize () {
-		document.getElementById("balance").value=1000;
+		document.getElementById("balance").value=10000;
 	};
 
 	function play() {
@@ -208,7 +208,7 @@
 
 		function playfast() {
 		var t=0	
-		for (newBal=1000;(newBal>0 && newBal<50000);t++) {	
+		for (newBal=10000;(newBal>0 && newBal<50000);t++) {	
 			var heads=0, won, wons=0;
 			for (heads=1 ; Math.random()>=.5 ; heads++) {
 				won = Math.pow(2,(heads-1)); 

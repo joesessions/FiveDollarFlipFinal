@@ -221,16 +221,16 @@
 
 		function winner2() {
 			winTimes++;
-			document.getElementById("yo2").innerHTML = "Nights you won $50 or more: "+winTimes+" <br/> Nights you lost $50: "+lossTimes+"<br/> Percent of nights with a winning outcome (By 'winning outcome', we mean got to $100 or more and stopped): "+(100*winTimes/(winTimes+lossTimes))+"%";
-			document.getElementById("goToDemo2").innerHTML = "What if we start with more money?";
+			document.getElementById("yo2").innerHTML = "<br><br>Nights you won $50 or more: "+winTimes+" <br/> Nights you lost $50: "+lossTimes+"<br/> Percent of nights with a winning outcome (By 'winning outcome', we mean got to $100 or more and stopped): "+(100*winTimes/(winTimes+lossTimes))+"%  <br><br>Push the above button again to add in another 10,000 \"nights\" if you like.<br><br>";
+			document.getElementById("goToDemo2").innerHTML = "What if we start with $1000?";
 
 		};
 
 		function loser2 () {
 			lossTimes++;
 			console.log("lossTimes", lossTimes);
-			document.getElementById("yo2").innerHTML = "Nights you won $50 or more: "+winTimes+" <br/> Nights you lost $50: "+lossTimes+" <br/> Percent of nights with a winning outcome (By winning we mean got to $100 or more and stopped): "+(100*winTimes/(winTimes+lossTimes))+"%";
-			document.getElementById("goToDemo2").innerHTML = "What if we start with more money?";
+			document.getElementById("yo2").innerHTML = "<br><br>Nights you won $50 or more: "+winTimes+" <br/> Nights you lost $50: "+lossTimes+"<br/> Percent of nights with a winning outcome (By 'winning outcome', we mean got to $100 or more and stopped): "+(100*winTimes/(winTimes+lossTimes))+"%  <br><br>Push the above button again to add in another 10,000 \"nights\" if you like.<br><br>";
+			document.getElementById("goToDemo2").innerHTML = "What if we start with $1000?";
 
 		};	
 
