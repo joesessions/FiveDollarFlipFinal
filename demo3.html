@@ -49,99 +49,97 @@
 	function initialize () {
 		document.getElementById("balance").value=10000;
 	};
-
+		document.getElementById("movingOn").style.visibility = 'hidden';
 	function play() {
+	fullgame.length = 0;
+	gamenumbers.length = 0;
+	startingBalance = document.getElementById("balance").value;
+	mybal = startingBalance;
+
+	var j = 0;
 
 
-		
-		baltemp = document.getElementById("balance").value;
-		while (baltemp>4 || baltemp <50000){
-		baltemp = document.getElementById("balance").value;
-		var heads=0, won, wons=0, newBal;
+		while ( mybal>4 && mybal <50000){
+			var heads=0, won, wons=0 ;
+			
 
-	    <!-- document.getElementById("outcome").innerHTML=null;	 -->
-	    <!-- document.getElementById("conclusion").innerHTML=null;	 -->
+			<!-- document.getElementById("outcome").innerHTML=null;	 -->
+			<!-- document.getElementById("conclusion").innerHTML=null;	 -->
 
 				flip();	
                //Flips the coin until first "tails."
 
 				function flip() {
-				for (heads=1 ; Math.random()>=.5 ; heads++) {
+					for (heads=1 ; Math.random()>=.5 ; heads++) {
 
-						won = Math.pow(2,(heads-1)); 
-						wons = won + wons
+					won = Math.pow(2,(heads-1)); 
+					wons = won + wons
+					}// End of flip loop
+				j++
 
-					    <!-- var x = document.createElement("IMG"); -->
-					    <!-- var y = document.createTextNode("$"+ Math.pow(2,(heads-1))+" "); -->
+				mybal = mybal - 5 + wons;	
+				fullgame.push(mybal);
+				gamenumbers.push(j);
 
-					    <!-- x.setAttribute("src", "./images/Heads.png"); -->
-					    <!-- x.setAttribute("width", "100"); -->
-					    <!-- x.setAttribute("height", "93"); -->
-					    <!-- x.setAttribute("alt", "Heads"); -->
-					    <!-- document.getElementById("outcome").appendChild(x); -->
-					    <!-- document.getElementById("outcome").appendChild(y);	 -->
-					  
+				<!-- if (newBal<=4 || newBal>=50000) {gameOver()}; -->
 
+				<!-- document.getElementById("balance").value=bal; -->
 				}
-				}
-				
+				// END OF Game loop
 
-		<!-- var tails = document.createElement("IMG"); -->
-			<!-- tails.setAttribute("src", "./images/Tails.png"); -->
-		    <!-- tails.setAttribute("width", "100"); -->
-		    <!-- tails.setAttribute("height", "103"); -->
-		    <!-- tails.setAttribute("alt", "Tails"); -->
-		 	<!-- document.getElementById("outcome").appendChild(tails);	 -->
-		<!-- var z = document.createTextNode("You had $"+baltemp+". You paid $5 to play, then won $"+wons+".") -->
-		    <!-- document.getElementById("conclusion").appendChild(z);		 -->
-		j++
-		newBal = baltemp - 5 + wons;	
-		fullgame.push(newBal);
-		gamenumbers.push(j);
-
-		if (newBal>=50000) {winner()};
-		if (newBal<=0) {loser()};
-		document.getElementById("balance").value=newBal;
-		}
-		// END OF WHILE LOOP
-		graphIt();
-	}
+		} // End of Play loop.
+		<!-- console.log("Night is over", fullgame, gamenumbers);		 -->
+		gameOver();
 	
-	// END OF PLAY (WHICH PLAYS OUT A WHOLE NIGHT) FUNCTION
+	}	// END OF PLAY (WHICH PLAYS OUT A WHOLE NIGHT) FUNCTION
 
-	function winner() {
+		function gameOver() {
 		var para = document.createElement("p");
-		var node = document.createTextNode("About how often are you winning now?");
-		<!-- para.appendChild(node); -->
 		var element = document.getElementById("div1");
 		element.appendChild(para);
 	
-			var parent = document.getElementById("account");
-			var child = document.getElementById("play");
-			parent.removeChild(child);
+			<!-- var parent = document.getElementById("account"); -->
+			<!-- var child = document.getElementById("play"); -->
+			<!-- parent.removeChild(child); -->
 
 
 		graphIt();	
-		setTimeout(playmore (), 2000);
+		setTimeout(playmore (), 800);
 	}
+	
+	<!-- function winner() { -->
+		<!-- var para = document.createElement("p"); -->
+		<!-- var node = document.createTextNode(""); -->
+		<!-- <!-- para.appendChild(node); --> -->
+		<!-- var element = document.getElementById("div1"); -->
+		<!-- element.appendChild(para); -->
+	
+			<!-- var parent = document.getElementById("account"); -->
+			<!-- var child = document.getElementById("play"); -->
+			<!-- parent.removeChild(child); -->
 
-	function loser () {
-		var para = document.createElement("p");
-		var node = document.createTextNode("");
-		<!-- para.appendChild(node); -->
-		var element = document.getElementById("div1");
-		element.appendChild(para);
 
-			var parent = document.getElementById("account");
-			var child = document.getElementById("play");
-			parent.removeChild(child);
+		<!-- graphIt();	 -->
+		<!-- setTimeout(playmore (), 2000); -->
+	<!-- } -->
 
-		graphIt();
-		setTimeout(playmore (), 2000);
-	}
+	<!-- function loser () { -->
+		<!-- var para = document.createElement("p"); -->
+		<!-- var node = document.createTextNode(""); -->
+		<!-- <!-- para.appendChild(node); --> -->
+		<!-- var element = document.getElementById("div1"); -->
+		<!-- element.appendChild(para); -->
+
+			<!-- var parent = document.getElementById("account"); -->
+			<!-- var child = document.getElementById("play"); -->
+			<!-- parent.removeChild(child); -->
+
+		<!-- graphIt(); -->
+		<!-- setTimeout(playmore (), 2000); -->
+	<!-- } -->
 
 	function graphIt() {	
-
+		document.getElementById("movingOn").style.visibility = 'visible';
 		graphdata = [0,0];
 
 		for (k=0; k<gamenumbers.length; k++) {
@@ -209,20 +207,20 @@
 
 		function playfast() {
 		var t=0	
-		for (newBal=10000;(newBal>0 && newBal<50000);t++) {	
-			var heads=0, won, wons=0;
-			for (heads=1 ; Math.random()>=.5 ; heads++) {
-				won = Math.pow(2,(heads-1)); 
-				wons = won + wons;
-			}
-			j++
-			newBal = newBal - 5 + wons;	
-			fullgame.push(newBal);
-			gamenumbers.push(j);
-	 
-		if (newBal>=50000) {winner2()};
-		if (newBal<=0) {loser2()};				
-		};
+			for (newBal=10000;(newBal>0 && newBal<50000);t++) {	
+				var heads=0, won, wons=0;
+				for (heads=1 ; Math.random()>=.5 ; heads++) {
+					won = Math.pow(2,(heads-1)); 
+					wons = won + wons;
+				}
+				j++
+				newBal = newBal - 5 + wons;	
+				fullgame.push(newBal);
+				gamenumbers.push(j);
+		 
+			if (newBal>=50000) {winner2()};
+			if (newBal<=0) {loser2()};				
+			};
 		}  //End of playfast. 
        //Flips the coin until first "tails."
 
