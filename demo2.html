@@ -18,7 +18,6 @@
 <body onload="initialize()">
 	<div class="jumbotron">
 	  <h1 class="display-4">Gambler's Hell... or Heaven?</h1>
-	  <p class="lead">A test of judgment.</p>
 	  <hr class="my-4">
 	  <div id="removable"><p>This will play until all our $1000 is all gone or until we have $50,000.</p>
 	  <p>You'll win about 40% of the time. But your winning nights are much bigger than your losing nights!</p>
@@ -57,7 +56,7 @@
 		while (baltemp>4 || baltemp <50000){
 		baltemp = document.getElementById("balance").value;
 		var heads=0, won, wons=0, newBal;
-		console.log("baltemp ", baltemp);
+
 	    <!-- document.getElementById("outcome").innerHTML=null;	 -->
 	    <!-- document.getElementById("conclusion").innerHTML=null;	 -->
 
@@ -224,7 +223,7 @@
 
 		function loser2 () {
 			lossTimes++;
-			console.log("lossTimes", lossTimes)
+
 			document.getElementById("yo2").innerHTML = "<br>Nights you left with $50,000 or more: "+winTimes+" <br/> Nights you lost $1000: "+lossTimes+" <br/> Percent of nights with a winning outcome (Winning: we got to $50,000 or more and stopped): "+(100*winTimes/(winTimes+lossTimes))+"%<br><br>";
 		};	
 		

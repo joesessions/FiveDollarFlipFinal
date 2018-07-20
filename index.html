@@ -9,12 +9,11 @@
 	</head>
 
 
-<body>
+<body onload = "initialize()">
 	<div class="jumbotron">
   <h1 class="display-4">Gambler's Hell... or Heaven?</h1>
-  <p class="lead">A test of judgment.</p>
   <hr class="my-4">
-  <p>You'll be flipping a coin... but are the odds in your favor?</p>
+  <p>This is a probability question. <br> Of course, it’s a bit of a trick question, so the answer is perhaps the opposite of what you’ll think initially. <br> But it’s fun to watch exactly how it unfolds!</p>
   <p class="lead">
     <a class="btn btn-primary btn-lg" href="#" role="button" id="rule1" onclick="rule1()">Rule 1</a><br><br>
     <a class="btn btn-primary btn-lg" href="#" role="button" id="rule2" onclick="rule2()">Rule 2</a><br><br>
@@ -24,6 +23,7 @@
 </div>
 
 <script type="text/javascript">
+
 	function rule1() {
 		document.getElementById("rule1").innerHTML = "Rule 1: Each game costs $5. The game ends whenever you flip tails.";
 		
@@ -34,22 +34,29 @@
 	}
 	function rule3() {
 		document.getElementById("rule3").innerHTML = "Rule 3: Each time you get heads, you get twice as much back as the previous time.";
-		setTimeout(shallWePage2, 2000);
+		setTimeout(shallWePage2, 1000);
 
 	}
 
 
 	function shallWePage2() {
-		document.getElementById("movingOn").innerHTML = "Let's play, shall we?";
-		
+		    var x = document.getElementById("movingOn");
+			x.style.visibility = 'visible';
+			//x.style.display = "display: inline-block; font-weight: 400;text-align: center;white-space: nowrap; vertical-align: middle;-webkit-user-select: none;  -moz-user-select: none;  -ms-user-select: none; user-select: none;    border: 1px solid transparent;    padding: .375rem .75rem;    font-size: 1rem;    line-height: 1.5;    border-radius: .25rem;    transition: color .15s padding: .5rem 1rem; font-size: 1.25rem; line-height: 1.5;	border-radius: .3rem; color: #fff; background-color: #007bff; border-color: #007bff;";
+			x.innerHTML = "Ready?";
 		
 	}
 
 	function goToPage2() {
-		window.location.assign("demointro.html")
+		window.location.assign("demo.html")
 	}
 
-
+	function initialize(){
+			    var x = document.getElementById("movingOn");
+  
+			x.style.visibility = 'hidden';
+			
+			}
 
 
 	/*function rule5() {
