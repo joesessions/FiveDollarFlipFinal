@@ -19,9 +19,10 @@
 	<div class="jumbotron">
 	  <h1 class="display-4">Gambler's Hell... or Heaven?</h1>
 	  <hr class="my-4">
-	  <div id="removable"><p>This will play until all our $1000 is all gone or until we have $50,000.</p>
-	  <p>You'll win about 40% of the time. But your winning nights are much bigger than your losing nights!</p>
-	  <p>Refresh the page to play as many times as you want.</p>
+	  <div id="removable"><p>But what if we have more money to start with?</p> 
+	  <p>This page will rapidly play until all our $1000 is all gone or until we have $50,000.</p>
+	  <p>You'll win about 40% of the time. But your winning nights are much bigger than your losing nights! </p>
+	  <p>We’re starting to see how this is a winning game for us. Play as many times as you want. </p>
 	  <span id="account">Account Balance:  $ <input type="number" id="balance">
 	      <a class="btn btn-primary btn-lg" href="#" role="button" id="play" onclick="play()">Play</a><br><br><br>
 
@@ -41,102 +42,84 @@
 <script>
 	var fullgame = []
 	var gamenumbers = []
-	var j = 0;
-	var winTimes=0, lossTimes=0
 
 	function initialize () {
 		document.getElementById("balance").value=1000;
+		document.getElementById("movingOn").style.visibility = 'hidden';
+		document.getElementById("goToDemo3").style.visibility = 'hidden';
 	};
 
 	function play() {
+	fullgame.length = 0;
+	gamenumbers.length = 0;
+	startingBalance = document.getElementById("balance").value;
+	mybal = startingBalance;
+
+	var j = 0;
 
 
-		
-		baltemp = document.getElementById("balance").value;
-		while (baltemp>4 || baltemp <50000){
-		baltemp = document.getElementById("balance").value;
-		var heads=0, won, wons=0, newBal;
+		while ( mybal>4 && mybal <50000){
+			var heads=0, won, wons=0 ;
+			
 
-	    <!-- document.getElementById("outcome").innerHTML=null;	 -->
-	    <!-- document.getElementById("conclusion").innerHTML=null;	 -->
+			<!-- document.getElementById("outcome").innerHTML=null;	 -->
+			<!-- document.getElementById("conclusion").innerHTML=null;	 -->
 
 				flip();	
                //Flips the coin until first "tails."
 
 				function flip() {
-				for (heads=1 ; Math.random()>=.5 ; heads++) {
+					for (heads=1 ; Math.random()>=.5 ; heads++) {
 
-						won = Math.pow(2,(heads-1)); 
-						wons = won + wons
+					won = Math.pow(2,(heads-1)); 
+					wons = won + wons
+					}// End of flip loop
+				j++
 
-					    <!-- var x = document.createElement("IMG"); -->
-					    <!-- var y = document.createTextNode("$"+ Math.pow(2,(heads-1))+" "); -->
+				mybal = mybal - 5 + wons;	
+				fullgame.push(mybal);
+				gamenumbers.push(j);
 
-					    <!-- x.setAttribute("src", "./images/Heads.png"); -->
-					    <!-- x.setAttribute("width", "100"); -->
-					    <!-- x.setAttribute("height", "93"); -->
-					    <!-- x.setAttribute("alt", "Heads"); -->
-					    <!-- document.getElementById("outcome").appendChild(x); -->
-					    <!-- document.getElementById("outcome").appendChild(y);	 -->
-					  
+				<!-- if (newBal<=4 || newBal>=50000) {gameOver()}; -->
 
+				<!-- document.getElementById("balance").value=bal; -->
 				}
-				}
-				
+				// END OF Game loop
 
-		<!-- var tails = document.createElement("IMG"); -->
-			<!-- tails.setAttribute("src", "./images/Tails.png"); -->
-		    <!-- tails.setAttribute("width", "100"); -->
-		    <!-- tails.setAttribute("height", "103"); -->
-		    <!-- tails.setAttribute("alt", "Tails"); -->
-		 	<!-- document.getElementById("outcome").appendChild(tails);	 -->
-		<!-- var z = document.createTextNode("You had $"+baltemp+". You paid $5 to play, then won $"+wons+".") -->
-		    <!-- document.getElementById("conclusion").appendChild(z);		 -->
-		j++
-		newBal = baltemp - 5 + wons;	
-		fullgame.push(newBal);
-		gamenumbers.push(j);
-
-		if (newBal>=50000) {winner()};
-		if (newBal<=0) {loser()};
-		document.getElementById("balance").value=newBal;
-		}
-		// END OF WHILE LOOP
-		graphIt();
-	}
+		} // End of Play loop.
+		<!-- console.log("Night is over", fullgame, gamenumbers);		 -->
+		gameOver();
 	
-	// END OF PLAY (WHICH PLAYS OUT A WHOLE NIGHT) FUNCTION
+	}	// END OF PLAY (WHICH PLAYS OUT A WHOLE NIGHT) FUNCTION
 
-	function winner() {
+	function gameOver() {
 		var para = document.createElement("p");
-		var node = document.createTextNode("About how often are you winning now?");
-		<!-- para.appendChild(node); -->
 		var element = document.getElementById("div1");
 		element.appendChild(para);
 	
-			var parent = document.getElementById("account");
-			var child = document.getElementById("play");
-			parent.removeChild(child);
+			<!-- var parent = document.getElementById("account"); -->
+			<!-- var child = document.getElementById("play"); -->
+			<!-- parent.removeChild(child); -->
 
 
 		graphIt();	
-		setTimeout(playmore (), 2000);
+		setTimeout(playmore (), 800);
 	}
 
-	function loser () {
-		var para = document.createElement("p");
-		var node = document.createTextNode("");
+	<!-- function loser () { -->
+		<!-- var para = document.createElement("p"); -->
+		<!-- var node = document.createTextNode("About how often are you winning now?"); -->
 		<!-- para.appendChild(node); -->
-		var element = document.getElementById("div1");
-		element.appendChild(para);
+		<!-- var element = document.getElementById("div1"); -->
+		<!-- element.appendChild(para); -->
 
-			var parent = document.getElementById("account");
-			var child = document.getElementById("play");
-			parent.removeChild(child);
+			<!-- var parent = document.getElementById("account"); -->
+			<!-- var child = document.getElementById("play"); -->
+			<!-- parent.removeChild(child); -->
 
-		graphIt();
-		setTimeout(playmore (), 2000);
-	}
+		<!-- graphIt(); -->
+		<!-- setTimeout(playmore (), 2000); -->
+	<!-- } -->
 
 	function graphIt() {	
 
@@ -179,7 +162,9 @@
 
 
 	function playmore () {
+		document.getElementById("movingOn").style.visibility = 'visible';
 		document.getElementById("movingOn").innerHTML = 'Click here to simulate 1000 "casino nights" as above!';	
+
 	};
 
 	function play10000times () {
@@ -212,20 +197,21 @@
 		if (newBal<=0) {loser2()};				
 		};
 		}  //End of playfast. 
-       //Flips the coin until first "tails."
+var winTimes=0, lossTimes=0, j;
 
 
 		function winner2() {
 			winTimes++;
 			document.getElementById("yo2").innerHTML = "<br>Nights you left with $50,000 or more: "+winTimes+" <br/> Nights you lost $1000: "+lossTimes+"<br/> Percent of nights with a winning outcome (Winning: we got to $50,000 or more and stopped): "+(100*winTimes/(winTimes+lossTimes))+"%<br><br>";
-			
+			document.getElementById("goToDemo3").style.visibility = 'visible';
 		};
 
 		function loser2 () {
 			lossTimes++;
 
 			document.getElementById("yo2").innerHTML = "<br>Nights you left with $50,000 or more: "+winTimes+" <br/> Nights you lost $1000: "+lossTimes+" <br/> Percent of nights with a winning outcome (Winning: we got to $50,000 or more and stopped): "+(100*winTimes/(winTimes+lossTimes))+"%<br><br>";
-		};	
+			document.getElementById("goToDemo3").style.visibility = 'visible';
+			};	
 		
 		function goToDemo3() {
 		window.location.assign("demo3.html")

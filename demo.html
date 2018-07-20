@@ -21,7 +21,7 @@
 
 	  <hr class="my-4">
 	  <div id="mainBody">
-	  <div> You walk into the casino with $50. We’ll play until we’ve lost that, or have over $100. Get a feel for how the game works… but don’t get TOO disheartened. </div><br>
+	  <div> You walk into the casino with $50. Play until we’ve lost that, or have over $100. Get a feel for how the game works… but don’t get TOO disheartened. </div><br>
 	  <span id="account">Account Balance:  $ <input type="number" id="balance">
 	      <a class="btn btn-primary btn-lg" href="#" role="button" id="play" onclick="play()">Pay $5 to Play</a><br><br><br>
 	  <span id="outcome"></span> <br>
@@ -30,6 +30,8 @@
 	  </span>
 	  </div>
 	  <div id="div1"></div>
+	  	  <div id="yo3"></div>
+	  	  <a class="btn btn-primary btn-lg" href="#" role="button" id="refresh" onClick="document.location.reload(true)">Play again!</a>
 	  <div id="yo"></div>
 	      <a class="btn btn-primary btn-lg" href="#" role="button" id="movingOn" onclick="play10000times()"></a>
 	  <div id="yo2"></div>
@@ -49,8 +51,14 @@
 		document.getElementById("balance").value=50;
 		    var x = document.getElementById("goToDemo2");
   
-			x.style.display = "none";
-   
+			x.style.visibility = 'hidden';
+			document.getElementById("movingOn").style.visibility = 'hidden';
+   			document.getElementById("refresh").style.visibility = 'hidden';
+	};
+	function refresh () {
+		
+		document.location.reload(true);
+		console.log("refreshing!");
 	};
 
 	function play() {
@@ -178,11 +186,15 @@
 
 
 	function playmore () {
-		document.getElementById("movingOn").innerHTML = 'Click here to simulate 10,000 "casino nights" with $50 in your pocket! (Takes a few seconds)';	
+
+		document.getElementById("refresh").style.visibility = 'visible';
+		document.getElementById("movingOn").style.visibility = 'visible';
+		document.getElementById("movingOn").innerHTML = 'Click here to simulate 10,000 "casino nights" with $50 in your pocket!';	
 	};
 
 	function play10000times () {
-
+		document.getElementById("goToDemo2").style.visibility = 'visible';
+		document.getElementById("movingOn").innerHTML = 'Add an additional 10,000 "casino nights"';	
 		for (i=0; i<10000; i++) {
 			baltemp=50	
 			playfast();
@@ -224,20 +236,21 @@
 
 		function winner2() {
 			winTimes++;
-			document.getElementById("yo2").innerHTML = "<br><br>Nights you ended with $100 or more: "+winTimes+" <br/> Nights you lost $50: "+lossTimes+"<br/> Percent of nights with a winning outcome (By 'winning outcome', we mean got to $100 or more and stopped): "+(100*winTimes/(winTimes+lossTimes))+"%  <br><br>Push the above button again to add in another 10,000 \"nights\" if you like.<br><br>";
-			document.getElementById("goToDemo2").innerHTML = "What if we start with $1000?";
+			document.getElementById("yo2").innerHTML = "<br><br>Nights you ended with $100 or more: "+winTimes+" <br/> Nights you lost $50: "+lossTimes+"<br/> Percent of nights with a winning outcome (By 'winning outcome', we mean got to $100 or more and stopped): "+(100*winTimes/(winTimes+lossTimes))+"%  <br><br>Push the above button again to add in another 10,000 \"nights\" if you like.<br> What percentage are you approaching?<br><br>";
+			document.getElementById("goToDemo2").innerHTML = "Ready to move on?";
 
 		};
 
 		function loser2 () {
 			lossTimes++;
-			document.getElementById("yo2").innerHTML = "<br><br>Nights you ended with $100 or more: "+winTimes+" <br/> Nights you lost $50: "+lossTimes+"<br/> Percent of nights with a winning outcome (By 'winning outcome', we mean got to $100 or more and stopped): "+(100*winTimes/(winTimes+lossTimes))+"%  <br><br>Push the above button again to add in another 10,000 \"nights\" if you like.<br><br>";
-			document.getElementById("goToDemo2").innerHTML = "What if we start with $1000?";
+			document.getElementById("yo2").innerHTML = "<br><br>Nights you ended with $100 or more: "+winTimes+" <br/> Nights you lost $50: "+lossTimes+"<br/> Percent of nights with a winning outcome (By 'winning outcome', we mean got to $100 or more and stopped): "+(100*winTimes/(winTimes+lossTimes))+"%  <br><br>Push the above button again to add in another 10,000 \"nights\" if you like.<br> What percentage are you approaching?<br><br>";
+			document.getElementById("goToDemo2").innerHTML = "Ready to move on?";
 
 		};	
 
 			function goToDemo2() {
 		window.location.assign("demo2.html")
+
 		}
 /*		function graphIt2() {	
 
