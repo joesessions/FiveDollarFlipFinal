@@ -218,14 +218,14 @@
 
 		function winner2() {
 			winTimes++;
-			document.getElementById("yo2").innerHTML = "<br>Nights you won $50 or more: "+winTimes+" <br/> Nights you lost $50: "+lossTimes+"<br/> Percent of nights with a winning outcome (Winning: we got to $50,000 or more and stopped): "+(100*winTimes/(winTimes+lossTimes))+"%<br><br>";
+			document.getElementById("yo2").innerHTML = "<br>Nights you left with $50,000 or more: "+winTimes+" <br/> Nights you lost $1000: "+lossTimes+"<br/> Percent of nights with a winning outcome (Winning: we got to $50,000 or more and stopped): "+(100*winTimes/(winTimes+lossTimes))+"%<br><br>";
 			
 		};
 
 		function loser2 () {
 			lossTimes++;
 			console.log("lossTimes", lossTimes)
-			document.getElementById("yo2").innerHTML = "<br>Nights you won $50 or more: "+winTimes+" <br/> Nights you lost $50: "+lossTimes+" <br/> Percent of nights with a winning outcome (Winning: we got to $50,000 or more and stopped): "+(100*winTimes/(winTimes+lossTimes))+"%<br><br>";
+			document.getElementById("yo2").innerHTML = "<br>Nights you left with $50,000 or more: "+winTimes+" <br/> Nights you lost $1000: "+lossTimes+" <br/> Percent of nights with a winning outcome (Winning: we got to $50,000 or more and stopped): "+(100*winTimes/(winTimes+lossTimes))+"%<br><br>";
 		};	
 		
 		function goToDemo3() {

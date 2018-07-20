@@ -57,7 +57,7 @@
 		while (baltemp>4 || baltemp <50000){
 		baltemp = document.getElementById("balance").value;
 		var heads=0, won, wons=0, newBal;
-		console.log("baltemp ", baltemp);
+
 	    <!-- document.getElementById("outcome").innerHTML=null;	 -->
 	    <!-- document.getElementById("conclusion").innerHTML=null;	 -->
 
@@ -228,14 +228,13 @@
 
 		function winner2() {
 			winTimes++;
-			document.getElementById("yo2").innerHTML = "<br>Nights you won $50 or more: "+winTimes+" <br/> Nights you lost $50: "+lossTimes+"<br/> Percent of nights with a winning outcome (Winning: we got to $50,000 or more and stopped): "+(100*winTimes/(winTimes+lossTimes))+"%";
+			document.getElementById("yo2").innerHTML = "<br>Nights you left with $50,000 or more: "+winTimes+" <br/> Nights you lost $10,000: "+lossTimes+"<br/> Percent of nights with a winning outcome (Winning: we got to $50,000 or more and stopped): "+(100*winTimes/(winTimes+lossTimes))+"%";
 			
 		};
 
 		function loser2 () {
 			lossTimes++;
-			console.log("lossTimes", lossTimes)
-			document.getElementById("yo2").innerHTML = "<br>Nights you won $50 or more: "+winTimes+" <br/> Nights you lost $50: "+lossTimes+" <br/> Percent of nights with a winning outcome (Winning: we got to $50,000 or more and stopped): "+(100*winTimes/(winTimes+lossTimes))+"%";
+			document.getElementById("yo2").innerHTML = "<br>Nights you left with $50,000 or more: "+winTimes+" <br/> Nights you lost $10,000: "+lossTimes+" <br/> Percent of nights with a winning outcome (Winning: we got to $50,000 or more and stopped): "+(100*winTimes/(winTimes+lossTimes))+"%";
 		};	
 /*		function graphIt2() {	
 
