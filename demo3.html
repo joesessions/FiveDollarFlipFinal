@@ -21,9 +21,13 @@
 	  <hr class="my-4">
 	  <div id="removable">
 	  <p>It's really all a matter of how much money you can stand to loose.</p>
+	  <p>Notice that winning depends on those times we get 12 or more heads in a row. </p>
+	  <p>12 heads = $4095, by the way. Without the occasional huge vertical spikes on the graph, we're just loosing</p>
+	  <p>Perhaps there is a fun life lesson here: Soichori Honda (founder of Honda) said his life was 99% failure.</p>
+	  <p>It seems some people face a challenge with more effort they are willing to spend, waiting on the occasional good fortune.</p>
 	  <p>This will play until all our $10,000 is all gone or until we have $50,000.</p>
 	  <p>If you start with $10,000, you will lose <strong>less than ONE PERCENT</strong> of the time!</p>
-	  <p>Refresh the page to play as many times as you want.</p>
+	  <p>Play as many times as you want.</p>
 	  <span id="account">Account Balance:  $ <input type="number" id="balance">
 	      <a class="btn btn-primary btn-lg" href="#" role="button" id="play" onclick="play()">Play</a><br><br><br>
 
@@ -48,8 +52,9 @@
 
 	function initialize () {
 		document.getElementById("balance").value=10000;
-	};
 		document.getElementById("movingOn").style.visibility = 'hidden';
+	};
+
 	function play() {
 	fullgame.length = 0;
 	gamenumbers.length = 0;
@@ -221,20 +226,22 @@
 			if (newBal>=50000) {winner2()};
 			if (newBal<=0) {loser2()};				
 			};
-		}  //End of playfast. 
+		} ; //End of playfast. 
        //Flips the coin until first "tails."
 
 
 		function winner2() {
 			winTimes++;
-			document.getElementById("yo2").innerHTML = "<br>Nights you left with $50,000 or more: "+winTimes+" <br/> Nights you lost $10,000: "+lossTimes+"<br/> Percent of nights with a winning outcome (Winning: we got to $50,000 or more and stopped): "+(100*winTimes/(winTimes+lossTimes))+"%";
+			document.getElementById("yo2").innerHTML = "<br>Nights you left with $50,000 or more: "+winTimes+" <br/> Nights you lost $10,000: "+lossTimes+"<br/> Percent of nights with a winning outcome : "+(100*winTimes/(winTimes+lossTimes))+"%<br>"+
+			"If we didn't occasionally get 12-18 heads-in-a-row, we wouldn't win, would we? <br> THANKS FOR PLAYING!!";
 			
 		};
 
 		function loser2 () {
 			lossTimes++;
-			document.getElementById("yo2").innerHTML = "<br>Nights you left with $50,000 or more: "+winTimes+" <br/> Nights you lost $10,000: "+lossTimes+" <br/> Percent of nights with a winning outcome (Winning: we got to $50,000 or more and stopped): "+(100*winTimes/(winTimes+lossTimes))+"%";
-		};	
+			document.getElementById("yo2").innerHTML = "<br>Nights you left with $50,000 or more: "+winTimes+" <br/> Nights you lost $10,000: "+lossTimes+" <br/> Percent of nights with a winning outcome : "+(100*winTimes/(winTimes+lossTimes))+"%<br>"+
+			"If we didn't occasionally get 12-18 heads-in-a-row, we wouldn't win, would we? <br> THANKS FOR PLAYING!!";
+		}	
 /*		function graphIt2() {	
 
 		graphdata = [0,0];

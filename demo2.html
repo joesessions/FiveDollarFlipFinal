@@ -19,7 +19,7 @@
 	<div class="jumbotron">
 	  <h1 class="display-4">Gambler's Hell... or Heaven?</h1>
 	  <hr class="my-4">
-	  <div id="removable"><p>But what if we have more money to start with?</p> 
+	  <div id="removable"><p>How about starting with $1000?</p> 
 	  <p>This page will rapidly play until all our $1000 is all gone or until we have $50,000.</p>
 	  <p>You'll win about 40% of the time. But your winning nights are much bigger than your losing nights! </p>
 	  <p>We’re starting to see how this is a winning game for us. Play as many times as you want. </p>
@@ -177,7 +177,7 @@
 		var child8 = document.getElementById("removable");
 		child8.parentNode.removeChild(child8);	
 
-		document.getElementById("goToDemo3").innerHTML = "What if we start with $10,000?";
+		document.getElementById("goToDemo3").innerHTML = "BUT!! What if we start with <strong>$10,000?</strong>";
 	};
 
 		function playfast() {
@@ -202,14 +202,14 @@ var winTimes=0, lossTimes=0, j;
 
 		function winner2() {
 			winTimes++;
-			document.getElementById("yo2").innerHTML = "<br>Nights you left with $50,000 or more: "+winTimes+" <br/> Nights you lost $1000: "+lossTimes+"<br/> Percent of nights with a winning outcome (Winning: we got to $50,000 or more and stopped): "+(100*winTimes/(winTimes+lossTimes))+"%<br><br>";
+			document.getElementById("yo2").innerHTML = "<br>Nights you left with $50,000 or more: "+winTimes+" <br/> Nights you lost $1000: "+lossTimes+"<br/> Percent of nights with a winning outcome (Winning: we got to $50,000 or more and stopped): "+(100*winTimes/(winTimes+lossTimes))+"%<br> See, I told you it was about 40%!<br><br>";
 			document.getElementById("goToDemo3").style.visibility = 'visible';
 		};
 
 		function loser2 () {
 			lossTimes++;
 
-			document.getElementById("yo2").innerHTML = "<br>Nights you left with $50,000 or more: "+winTimes+" <br/> Nights you lost $1000: "+lossTimes+" <br/> Percent of nights with a winning outcome (Winning: we got to $50,000 or more and stopped): "+(100*winTimes/(winTimes+lossTimes))+"%<br><br>";
+			document.getElementById("yo2").innerHTML = "<br>Nights you left with $50,000 or more: "+winTimes+" <br/> Nights you lost $1000: "+lossTimes+" <br/> Percent of nights with a winning outcome (Winning: we got to $50,000 or more and stopped): "+(100*winTimes/(winTimes+lossTimes))+"%<br> See, I told you it was about 40%!<br><br>";
 			document.getElementById("goToDemo3").style.visibility = 'visible';
 			};	
 		

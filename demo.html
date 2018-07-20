@@ -21,7 +21,7 @@
 
 	  <hr class="my-4">
 	  <div id="mainBody">
-	  <div> You walk into the casino with $50. Play until we’ve lost that, or have over $100. Get a feel for how the game works… but don’t get TOO disheartened. </div><br>
+	  <div> You walk into the casino with $50. Play until you’ve lost that, or have over $100. Get a feel for how the game works… but don’t get TOO disheartened. </div><br>
 	  <span id="account">Account Balance:  $ <input type="number" id="balance">
 	      <a class="btn btn-primary btn-lg" href="#" role="button" id="play" onclick="play()">Pay $5 to Play</a><br><br><br>
 	  <span id="outcome"></span> <br>
@@ -189,7 +189,7 @@
 
 		document.getElementById("refresh").style.visibility = 'visible';
 		document.getElementById("movingOn").style.visibility = 'visible';
-		document.getElementById("movingOn").innerHTML = 'Click here to simulate 10,000 "casino nights" with $50 in your pocket!';	
+		document.getElementById("movingOn").innerHTML = 'Click here to simulate 10,000 casino nights with $50 in your pocket!';	
 	};
 
 	function play10000times () {
@@ -236,15 +236,15 @@
 
 		function winner2() {
 			winTimes++;
-			document.getElementById("yo2").innerHTML = "<br><br>Nights you ended with $100 or more: "+winTimes+" <br/> Nights you lost $50: "+lossTimes+"<br/> Percent of nights with a winning outcome (By 'winning outcome', we mean got to $100 or more and stopped): "+(100*winTimes/(winTimes+lossTimes))+"%  <br><br>Push the above button again to add in another 10,000 \"nights\" if you like.<br> What percentage are you approaching?<br><br>";
-			document.getElementById("goToDemo2").innerHTML = "Ready to move on?";
+			document.getElementById("yo2").innerHTML = "<br><br>Nights you ended with $100 or more: "+winTimes+" <br/> Nights you lost $50: "+lossTimes+"<br/> Percent of nights with a winning outcome (By 'winning outcome', we mean got to $100 or more and stopped): "+(100*winTimes/(winTimes+lossTimes))+"%  <br><br>Push the above button again to add in another 10,000 \"nights\" if you like.<br> What percentage are you approaching?  18.25?<br><br>";
+			document.getElementById("goToDemo2").innerHTML = "But what if we started with more money?";
 
 		};
 
 		function loser2 () {
 			lossTimes++;
-			document.getElementById("yo2").innerHTML = "<br><br>Nights you ended with $100 or more: "+winTimes+" <br/> Nights you lost $50: "+lossTimes+"<br/> Percent of nights with a winning outcome (By 'winning outcome', we mean got to $100 or more and stopped): "+(100*winTimes/(winTimes+lossTimes))+"%  <br><br>Push the above button again to add in another 10,000 \"nights\" if you like.<br> What percentage are you approaching?<br><br>";
-			document.getElementById("goToDemo2").innerHTML = "Ready to move on?";
+			document.getElementById("yo2").innerHTML = "<br><br>Nights you ended with $100 or more: "+winTimes+" <br/> Nights you lost $50: "+lossTimes+"<br/> Percent of nights with a winning outcome (By 'winning outcome', we mean got to $100 or more and stopped): "+(100*winTimes/(winTimes+lossTimes))+"%  <br><br>Push the above button again to add in another 10,000 \"nights\" if you like.<br> What percentage are you approaching?  18.25?<br><br>";
+			document.getElementById("goToDemo2").innerHTML = "But what if we started with more money?";
 
 		};	
 
